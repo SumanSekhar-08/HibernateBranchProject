@@ -1,0 +1,57 @@
+package HibernateProject;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+@Entity
+public class Encounters {
+    @Id
+    private int id;
+    private String name;
+    private String symptomes;
+    private int age;
+
+    @ManyToOne
+    private Patients patient;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSymptomes() {
+        return symptomes;
+    }
+
+    public void setSymptomes(String symptomes) {
+        this.symptomes = symptomes;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public Patients getPatient() {
+        return patient;
+    }
+
+    public void setPatient(Patients patient) {
+        this.patient = patient;
+    }
+}
