@@ -1,0 +1,49 @@
+package HibernateProject;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import java.util.Set;
+
+@Entity
+public class Disease {
+    @Id
+    private int id;
+    private String name;
+    private String symptomes;
+
+    @ManyToMany(mappedBy = "diseases")
+    private Set<Patients> patients;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSymptomes() {
+        return symptomes;
+    }
+
+    public void setSymptomes(String symptomes) {
+        this.symptomes = symptomes;
+    }
+
+    public Set<Patients> getPatients() {
+        return patients;
+    }
+
+    public void setPatients(Set<Patients> patients) {
+        this.patients = patients;
+    }
+}
